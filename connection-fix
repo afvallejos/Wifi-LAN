@@ -1,0 +1,21 @@
+$ sudo nano /etc/NetworkManager/NetworkManager.conf
+
+[main]
+plugins=ifupdown,keyfile
+
+[ifupdown]
+managed=true
+#managed=false # Disable wifi
+
+
+[device]
+wifi.scan-rand-mac-address=no
+
+#[connectivity] 
+#uri=
+
+$ cat /etc/network/interfaces
+
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto wlo1
+iface wlo1 inet loopback
